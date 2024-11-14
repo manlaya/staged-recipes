@@ -1,6 +1,6 @@
 {% set name = "gridmarthe" %}
 {% set version = "0.0.1" %}
-{% set sha256 = "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855" %} 
+{% set sha256 = "eb042f75f1db8e1972a2ca692b7a2266f87c48ec928ff6e6ad744f626d8c3729" %} 
 
 package:
   name: {{ name|lower }}
