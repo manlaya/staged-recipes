@@ -11,17 +11,18 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: True # [py<39]
+  # skip build for py312 => need to manage f2py-meson compilation on windows.
+  skip: True  # [py<39 and py>311]
   number: 0
 
 requirements:
   build:
+    - {{ stdlib("c") }}
     - {{ compiler('fortran') }}
     - python                                
     - pip                                   
     - numpy >=1.22,<2.0                     
-    - charset_normalizer
-    - cross-python_{{ target_platform }}   
+    - charset-normalizer
     - setuptools                           
   host:
     - python
@@ -38,7 +39,7 @@ requirements:
     - rasterio
     - rioxarray
     - shapely
-    - matplotlib
+    - matplotlib-base
 
 test:
   imports:
