@@ -11,9 +11,11 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: True  # [py<310 and py>312]
-  skip: True  # [osx]
   number: 0
+  skip: True  # [py<310 or py>312 or osx]
+  # entry_points:
+  #     - ncmart = gridmarthe:scripts.ncmart
+  #     - cleanmgrid =gridmarthe:scripts.cleanmgrid
 
 requirements:
   build:
