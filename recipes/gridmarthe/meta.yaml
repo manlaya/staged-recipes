@@ -13,7 +13,7 @@ source:
 build:
   number: 0
   skip: True  # [py<310 or py>312]
-  skip: True  # [osx and py>311]
+  skip: True  # [osx]
   # entry_points:
   #     - ncmart = gridmarthe:scripts.ncmart
   #     - cleanmgrid =gridmarthe:scripts.cleanmgrid
@@ -45,15 +45,13 @@ requirements:
     - numpy >=1.26
   run:
     - python
-    - numpy >=1.26
-    - libgfortran
+    - libgfortran5
     - libgcc
+    - numpy >=1.26
     - pandas
     - h5netcdf
     - xarray
     - geopandas
-    - rasterio
-    - rioxarray
     - shapely
     - matplotlib-base
 
