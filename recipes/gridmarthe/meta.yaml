@@ -12,7 +12,8 @@ source:
 
 build:
   number: 0
-  skip: True  # [py<310 or py>312 or osx]
+  skip: True  # [py<310 or py>312]
+  skip: True  # [osx and py>311]
   # entry_points:
   #     - ncmart = gridmarthe:scripts.ncmart
   #     - cleanmgrid =gridmarthe:scripts.cleanmgrid
@@ -45,6 +46,8 @@ requirements:
   run:
     - python
     - numpy >=1.26
+    - libgfortran
+    - libgcc
     - pandas
     - h5netcdf
     - xarray
