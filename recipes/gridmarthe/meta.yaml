@@ -22,7 +22,7 @@ requirements:
     - gfortran
     - python                                
     - pip                                   
-    - numpy==1.26
+    - numpy ==1.26
     - charset-normalizer
     #- setuptools<60  # [win]
     - meson
@@ -38,10 +38,10 @@ requirements:
     # - setuptools<60  # [win]
     - meson
     - meson-python
-    - numpy==1.26
+    - numpy ==1.26
   run:
     - python
-    - numpy==1.26
+    - numpy ==1.26
     - pandas
     - h5netcdf
     - xarray
