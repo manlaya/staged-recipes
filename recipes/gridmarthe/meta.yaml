@@ -11,27 +11,37 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  # skip build for py312 => need to manage f2py-meson compilation on windows.
-  skip: True  # [py<39 and py>311]
+  skip: True  # [py<39 and py>312]
   number: 0
 
 requirements:
   build:
-    - {{ stdlib("c") }}
+    - {{ compiler('c') }}
     - {{ compiler('fortran') }}
+    - {{ stdlib("c") }}
+    - gfortran
     - python                                
     - pip                                   
-    - numpy >=1.22,<2.0                     
+    - numpy==1.26
     - charset-normalizer
-    - setuptools                           
+    #- setuptools<60  # [win]
+    - meson
+    - meson-python
   host:
+    - {{ compiler('c') }}
+    - {{ compiler('fortran') }}
+    - {{ stdlib("c") }}
+    - gfortran
+    - charset-normalizer
     - python
     - pip
-    - setuptools
-    - numpy >=1.22,<2.0                     
+    # - setuptools<60  # [win]
+    - meson
+    - meson-python
+    - numpy==1.26
   run:
     - python
-    - numpy
+    - numpy==1.26
     - pandas
     - h5netcdf
     - xarray
